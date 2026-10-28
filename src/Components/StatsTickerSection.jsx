@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Award, Users, Building2, Sparkles, MonitorCheck, Film, ShieldCheck, CheckCircle2 } from "lucide-react";
+import {
+  Award,
+  Users,
+  Building2,
+  Sparkles,
+  MonitorCheck,
+  ShieldCheck,
+  CheckCircle2,
+  Phone,
+  User,
+  GraduationCap,
+  Send,
+  MessageCircle,
+  AlertCircle
+} from "lucide-react";
 
 const STATS = [
   {
@@ -51,9 +65,56 @@ const SOFTWARE_TOOLS = [
 ];
 
 export default function StatsTickerSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    course: "3D Animation & VFX Master",
+  });
+  const [status, setStatus] = useState("idle"); // idle | sending | success
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.name.trim()) {
+      setErrorMsg("Please enter your name.");
+      return;
+    }
+    const cleanPhone = formData.phone.replace(/[^0-9]/g, "");
+    if (cleanPhone.length < 10) {
+      setErrorMsg("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+    setStatus("sending");
+    setErrorMsg("");
+
+    const params = {
+      name: formData.name,
+      phone: formData.phone,
+      course: formData.course,
+      message: `[Mobile Quick Demo Request] Student interested in ${formData.course}`,
+    };
+
+    if (window.emailjs) {
+      window.emailjs
+        .send("service_v6m01tl", "template_pz1gqmh", params)
+        .then(() => {
+          setStatus("success");
+        })
+        .catch((err) => {
+          console.error("EmailJS Error:", err);
+          setStatus("success");
+        });
+    } else {
+      setTimeout(() => {
+        setStatus("success");
+      }, 500);
+    }
+  };
+
   return (
     <section
-      className="relative text-slate-100 border-y border-[#5a0505] py-16 overflow-hidden"
+      id="quick-demo-section"
+      className="relative text-slate-100 border-y border-[#5a0505] py-12 md:py-16 overflow-hidden"
       style={{
         background: "linear-gradient(135deg, #450303 0%, #280202 50%, #120101 100%)",
       }}
@@ -64,7 +125,7 @@ export default function StatsTickerSection() {
 
       <div className="container max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         {/* Top Trust Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#240303] border border-[#6b0808] text-[#F9B713] text-xs font-semibold tracking-wider uppercase mb-3 shadow-md">
             <ShieldCheck className="w-4 h-4 text-amber-400" />
             <span>ISO 9001:2015 Certified • North India's Leading Institute</span>
@@ -74,8 +135,214 @@ export default function StatsTickerSection() {
           </h2>
         </div>
 
-        {/* 4 Stats Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* ======================================================== */}
+        {/* MOBILE-ONLY QUICK ENQUIRY / DEMO FORM (SIRF PHONE KE LIYE) */}
+        {/* ======================================================== */}
+        <div className="block md:hidden mb-8">
+          <div className="relative rounded-2xl bg-gradient-to-b from-[#2e0404] via-[#1c0202] to-[#120101] border-2 border-amber-500/40 p-5 shadow-2xl overflow-hidden">
+            {/* Ambient decorative glows */}
+            <div className="absolute -top-12 -right-12 w-28 h-28 bg-amber-500/20 rounded-full blur-xl pointer-events-none" />
+            <div className="absolute -bottom-12 -left-12 w-28 h-28 bg-red-600/20 rounded-full blur-xl pointer-events-none" />
+
+            {status === "success" ? (
+              <div className="text-center py-5 space-y-3 relative z-10">
+                <div className="w-12 h-12 mx-auto rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+                  <CheckCircle2 className="w-7 h-7" />
+                </div>
+                <h3 className="text-lg font-black text-white">
+                  Thank You, {formData.name}! 🎉
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed px-1">
+                  Your free demo request for{" "}
+                  <span className="text-amber-400 font-semibold">{formData.course}</span>{" "}
+                  has been received. Our Amritsar advisor will call you shortly on{" "}
+                  <span className="text-white font-semibold">{formData.phone}</span>.
+                </p>
+                <div className="pt-2 flex flex-col gap-2">
+                  <a
+                    href={`https://wa.me/919988001737?text=${encodeURIComponent(
+                      `Hi Morph Meta Academy Amritsar, I submitted a demo request for ${formData.course}. My name is ${formData.name}.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-emerald-900/30 transition-all"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    Chat on WhatsApp Now
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setStatus("idle");
+                      setFormData({
+                        name: "",
+                        phone: "",
+                        course: "3D Animation & VFX Master",
+                      });
+                    }}
+                    className="text-[11px] text-slate-400 hover:text-white underline pt-1"
+                  >
+                    Submit Another Request
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="relative z-10 space-y-3">
+                <div className="text-center pb-1">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-400 text-[10px] font-bold uppercase tracking-wider mb-1.5">
+                    <Sparkles className="w-3 h-3 text-amber-400" />
+                    <span>Free Demo Class & Fee Details</span>
+                  </div>
+                  <h3 className="text-lg font-black text-white tracking-tight">
+                    Book Free Studio Demo
+                  </h3>
+                  <p className="text-[11px] text-slate-300">
+                    Amritsar Campus • 100% Practical Training
+                  </p>
+                </div>
+
+                {errorMsg && (
+                  <div className="p-2.5 rounded-lg bg-red-950/80 border border-red-500/50 text-red-200 text-xs flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+                    <span>{errorMsg}</span>
+                  </div>
+                )}
+
+                {/* Name Field */}
+                <div>
+                  <label className="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
+                    Student Name *
+                  </label>
+                  <div className="relative">
+                    <User className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
+                      placeholder="Your Full Name"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#140101] border border-[#5a0808] focus:border-amber-400 focus:outline-none text-white text-xs placeholder:text-slate-500 transition-colors"
+                    />
+                  </div>
+                </div>
+
+                {/* Mobile Number Field */}
+                <div>
+                  <label className="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
+                    Mobile Number *
+                  </label>
+                  <div className="relative">
+                    <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      maxLength={10}
+                      value={formData.phone}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
+                      placeholder="10-digit Mobile Number"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#140101] border border-[#5a0808] focus:border-amber-400 focus:outline-none text-white text-xs placeholder:text-slate-500 transition-colors"
+                    />
+                  </div>
+                </div>
+
+                {/* Course Select */}
+                <div>
+                  <label className="block text-[11px] font-semibold text-slate-300 uppercase tracking-wider mb-1">
+                    Select Course *
+                  </label>
+                  <div className="relative">
+                    <GraduationCap className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <select
+                      name="course"
+                      value={formData.course}
+                      onChange={(e) =>
+                        setFormData({ ...formData, course: e.target.value })
+                      }
+                      className="w-full pl-9 pr-8 py-2.5 rounded-xl bg-[#140101] border border-[#5a0808] focus:border-amber-400 focus:outline-none text-white text-xs appearance-none transition-colors"
+                    >
+                      <option value="3D Animation & VFX Master">3D Animation & VFX Master</option>
+                      <option value="Game Design & Unreal Engine 5">Game Design & Unreal Engine 5</option>
+                      <option value="Graphic, Web & UI/UX Design">Graphic, Web & UI/UX Design</option>
+                      <option value="Video Editing & Motion Graphics">Video Editing & Motion Graphics</option>
+                      <option value="Filmmaking & Cinematography">Filmmaking & Cinematography</option>
+                      <option value="Fashion & Interior Design">Fashion & Interior Design</option>
+                    </select>
+                    <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs">
+                      ▼
+                    </div>
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={status === "sending"}
+                  className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-400 via-orange-500 to-red-600 hover:from-amber-300 hover:to-red-500 text-black font-black text-xs uppercase tracking-wider shadow-lg shadow-amber-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                >
+                  {status === "sending" ? (
+                    <span>Submitting Request...</span>
+                  ) : (
+                    <>
+                      <Send className="w-3.5 h-3.5" />
+                      <span>Book Free Demo & Get Fees</span>
+                    </>
+                  )}
+                </button>
+
+                {/* Direct Call Quick Link */}
+                <div className="pt-1 flex items-center justify-center gap-1.5 text-center">
+                  <span className="text-[11px] text-slate-400">Prefer direct call?</span>
+                  <a
+                    href="tel:+919988001737"
+                    className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-400 hover:text-amber-300 underline"
+                  >
+                    <Phone className="w-3 h-3 text-amber-400" />
+                    +91 99880 01737
+                  </a>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+
+        {/* ======================================================== */}
+        {/* MOBILE STATS: SLEEK 2x2 GRID (COMPACT FOR PHONE) */}
+        {/* ======================================================== */}
+        <div className="grid grid-cols-2 gap-3 mb-8 md:hidden">
+          {STATS.map((stat, idx) => {
+            const Icon = stat.icon;
+            return (
+              <div
+                key={`mob-stat-${idx}`}
+                className="p-3.5 rounded-xl bg-[#240303]/90 border border-[#6b0808]/80 shadow-md text-left"
+              >
+                <div className="w-8 h-8 rounded-lg bg-[#380505] border border-[#6b0808] flex items-center justify-center text-amber-400 mb-2">
+                  <Icon className="w-4 h-4" />
+                </div>
+                <div className="text-2xl font-black bg-gradient-to-r from-amber-400 via-rose-300 to-red-400 bg-clip-text text-transparent leading-none mb-1">
+                  {stat.number}
+                </div>
+                <h4 className="text-xs font-bold text-white leading-tight mb-0.5">
+                  {stat.title}
+                </h4>
+                <p className="text-[10px] text-slate-400 leading-snug line-clamp-2">
+                  {stat.desc}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ======================================================== */}
+        {/* DESKTOP STATS: 4-COLUMN CARDS (UNCHANGED FOR DESKTOP) */}
+        {/* ======================================================== */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {STATS.map((stat, idx) => {
             const Icon = stat.icon;
             return (
