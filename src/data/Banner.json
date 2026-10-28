@@ -1,0 +1,13 @@
+{
+    "id" :1,
+    "title" : {
+        "first":"3d Animation, Vfx,",
+        "second" : "Learn | Earn | Grow ",
+        "third" : "Academy"
+    },
+    "description" : "",
+    "button" : {
+        "label" : "Learn Course",
+        "link" : "/contactus"
+    }
+}

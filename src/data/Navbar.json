@@ -1,0 +1,400 @@
+{
+    "logo" : "/images/logonew.png",
+    "menu" : [
+       
+        {
+            "text" : "Academy",
+            "link" : "",
+            "submenu" : [
+                {
+                    "text": "Who We Are",
+                    "link" : "/morph-academy-animation-institute-in-Amritsar/"
+                },
+                {
+                    "text": "Facility",
+                    "link" : "/school-of-animation-and-visual-effects-morph-academy"
+                },
+                {
+                    "text": "Scholarship",
+                    "link" : "/scholarships-on-vfx-and-animation-course-in-Amritsar"
+                },
+                {
+                    "text" : "Franchise",
+                    "link" : "/animation-institute-franchise-opportunity-in-Amritsar/"
+                }
+                ,
+                {
+                    "text" : "Placement",
+                    "link" : "/best-job-placement-academy-in-Amritsar"
+                },
+                {
+                    "text": "Affiliations & Accreditations",
+                    "link" : "/animation-and-multimedia-colleges-affiliations-and-accreditations"
+                },
+                {
+                    "text": "Online Diploma & Certification",
+                    "link" : "/online-animation-game-design-metaverse-course-in-Amritsar"
+                }
+            ]
+        },
+        {
+            "text" : "Courses",
+            "link" : "",
+           
+            "submenu" : [
+                {
+                "text" : "Creative / Web",
+                "link" : "/creative-web",
+                "submenu" : [
+                    {
+                        "text" : "Graphics Designing",
+                        "link" :"/course/graphics-designing-institute-in-Amritsar/"
+                    },
+                    {
+                        "text" : " Web Designing",
+                        "link" : "/course/web-designing-course-in-Amritsar/"
+                    },
+                    {
+                        "text" : " Digital Marketing",
+                        "link" : "/course/top-digital-marketing-course-training-in-Amritsar/"
+                    },
+                    {
+                        "text" : "UI / UX Design",
+                        "link" : "/course/ui-ux-design-course-in-Amritsar-with-job-placements"
+                    },
+                    {
+                        "text" : "Fashion CAD",
+                        "link" : "/course/fashion-designing-with-cad-institute-in-Amritsar/"
+                    },
+                    {
+                        "text" : "Graphics & Video",
+                        "link" : "/course/multimedia-graphic-and-video-design-program-for-job"
+                    }
+                
+                ]
+                },
+                {
+                    "text" : "Animation Course",
+                    "link" : "/animation-course",
+                    "submenu" : [
+                        {
+                            "text" : "Multimedia Master",
+                            "link" : "/course/best-animation-and-multimedia-institute-in-india"
+                        },
+                        {
+                            "text" : "Animation & VFX",
+                            "link" : "/course/top-3d-animation-course-vfx-course-with-job"
+                        },
+                        {
+                            "text" : "Master in Visual Effects",
+                            "link" : "/course/visual-effects-courses-in-Amritsar/"
+                        },
+                        {
+                            "text" : "Degree In Animation",
+                            "link" : "/course/Degree-in-Animation-Courses-and-Colleges-in-Amritsar-India"
+                        },
+                        {
+                            "text" : "3D Animation Film Making",
+                            "link" : "/course/3D-Animation-Film-Making-Course-in-Amritsar-india"
+                        },
+                        {
+                            "text" : "ARCHI. Walthrough",
+                            "link" : "/course/best-interior-architecture-designing-course-in-Amritsar/"
+                        }
+                    ]
+                },
+                {
+                        "text" : "Film  Course",
+                        "link" : "/film-course",
+                        "submenu" : [
+                            {
+                                "text" : "Film Making & Direction",
+                                "link" : "/course/best-filmmaking-and-direction-schools-and-courses-in-india"
+                            },
+                            {
+                                "text" : "Photography",
+                                "link" : "/course/best-photography-courses-and-schools-colleges-and-institutes-in-india"
+                            },
+                            {
+                                "text" : "Cinematography",
+                                "link" : "/course/best-cinematography-videography-course-in-Amritsar/"
+                            },
+                            {
+                                "text" : "Video Editing",
+                                "link" : "/course/top-video-editing-courses-and-classes-in-india"
+                            },
+                            {
+                                "text" : "Post Production",
+                                "link" : "/course/video-editing-post-production-in-film-and-tv-colleges-in-india"
+                            },
+                            {
+                                "text" : " Music Production",
+                                "link" : "/course/music-production-course-in-Amritsar/"
+                            }
+                        ]
+                },
+                {
+                            "text" : "Gaming Course",
+                            "link" : "/gaming-cousre",
+                            "submenu" : [
+                                {
+                                    "text"  : "Games Designing",
+                                    "link" : "/course/top-game-design-and-development-course-in-india"
+                                },
+                                {
+                                    "text"  : "Unity Game Design",
+                                    "link" : "/course/master-game-development-with-our-unity-3d-course-and-academy"
+                                },
+                                {
+                                    "text"  : "Unreal Game Course",
+                                    "link" : "/course/game-development-course-using-unreal-engine-certification-institute"
+                                },
+                                {
+                                    "text"  : "Game Art & Develop",
+                                    "link" : "/course/game-development-courses-and-certifications-with-live-training"
+                                },
+                                {
+                                    "text"  : "NFT Game Development",
+                                    "link" : "/course/nft-game-development-and-web3-gamefi-course-and-training"
+                                },
+                                {
+                                    "text"  : "Play To Earn NFT Game Development",
+                                    "link" : "/course/play-to-earn-nft-game-development-course-and-training-institute"
+                                }
+                            ]
+                },
+                {
+                            "text" : "Metaverse & VR",
+                            "link" : "/metaverse-course",
+                            "submenu" : [
+                                
+                                {
+                                    "text"  : "Animation, AR/VR & Metaverse",
+                                    "link" : "/course/ar-vr-and-metaverse-course-at-morph-academy"
+                                },
+                                {
+                                    "text"  : "Virtaul Reality",
+                                    "link" : "/course/virtual-reality-course-training-institutes-in-india"
+                                },
+                                {
+                                    "text"  : "AR/VR Technologies",
+                                    "link" : "/course/ar-and-vr-technologies-training-in-Amritsar-india"
+                                },
+                                {
+                                    "text"  : "Metaverse and Web 3.0",
+                                    "link" : "/course/best-metaverse-and-web-3.0-course-at-morph-academy"
+                                },
+                                {
+                                    "text"  : "Animation & Metaverse",
+                                    "link" : "/course/animation-vfx-and-metaverse-course-and-classes-in-Amritsar"
+                                },
+                                {
+                                    "text"  : "AI Generative Art",
+                                    "link" : "/course/top-ai-generative-art-training-in-Amritsar-india"
+                                }
+                            ]
+                },
+                {
+                            "text" : "Job Ready Course",
+                            "link" : "/job-course",
+                            "submenu" : [
+                                
+                                {
+                                    "text"  : "Maya Pro",
+                                    "link" : "/course/maya-courses-and-classes-for-3d-animation"
+                                },
+                                {
+                                    "text"  : "Max Pro",
+                                    "link" : "/course/autodesk-3ds-max-courses-and-certifications-at-Amritsar/"
+                                },
+                                {
+                                    "text"  : "Rotoscoping",
+                                    "link" : "/course/rotoscoping-courses-and-certifications-in-Amritsar"
+                                },
+                                {
+                                    "text"  : "Cinema 4d Pro",
+                                    "link" : "/course/top-cinema-4d-courses-and-classes-collages-in-Amritsar"
+                                },
+                                {
+                                    "text"  : "Blender Pro",
+                                    "link" : "/course/3d-animation-course-with-blender-in-Amritsar"
+                                },
+                                {
+                                    "text"  : "Design Pro",
+                                    "link" : "/course/professional-graphic-design-courses-with-certificates"
+                                }
+                            ]
+                }
+               
+            ]
+        },
+        {
+            "text" : "Training",
+            "link" : "",
+           
+            "submenu" : [
+                {
+                "text" : "Industrial Training",
+             
+                "submenu" : [
+                    {
+                        "text" : "Data Science Training ",
+                        "link" :"/course/data-science-training-in-Amritsar/"
+                    },
+                    {
+                        "text" : "Data Analytics Training",
+                        "link" : "/course/data-analytics-training-in-Amritsar/"
+                    },
+                    {
+                        "text" : "Machine Learning & AI ",
+                        "link" : "/course/machine-learning-and-ai-training-in-Amritsar"
+                    },
+                    {
+                        "text" : "Salesforce  ",
+                        "link" : "/course/salesforce-training-in-Amritsar"
+                    },
+                    {
+                        "text" : "C/C++ Training",
+                        "link" : "/course/c++training-in-Amritsar"
+                    },
+                    {
+                        "text" : "Software Testing ",
+                        "link" : "/course/software-testing-training-in-Amritsar"
+                    }
+                
+                ]
+                },
+                {
+                    "text" : "Diploma Course",
+                   
+                    "submenu" : [
+                        {
+                            "text" : "Cloud Computing and DevOps  ",
+                            "link" : "/course/cloud-computing-devops-diploma-in-Amritsar"
+                        },
+                        {
+                            "text" : "Masters in Digital Marketing ",
+                            "link" : "/course/masters-in-digital-marketing-diploma-in-Amritsar"
+                        },
+                        {
+                            "text" : "Full-Stack Development ",
+                            "link" : "/course/masters-in-full-stack-development-diploma-in-Amritsar"
+                        },
+                        {
+                            "text" : "Front-end Dev with React  ",
+                            "link" : "/course/front-end-development-with-react-diploma-in-Amritsar"
+                        },
+                        {
+                            "text" : "Data Science & Data Analytics ",
+                            "link" : "/course/masters-in-data-science-and-analytics-diploma-in-Amritsar"
+                        },
+                        {
+                            "text" : "Blockchain Technology  ",
+                            "link" : "/course/masters-in-blockchain-technology-diploma-in-Amritsar"
+                        }
+                    ]
+                }
+               
+            ]
+        },
+        {
+            "text" : "University",
+            "link" : "",
+           
+            "submenu" : [
+                {
+                "text" : "Professional Degree",
+               
+                "submenu" : [
+                    {
+                        "text" : "MBA - Digital Marketing",
+                        "link" :"/course/mba-in-digital-marketing-in-Amritsar"
+                    },
+                    {
+                        "text" : "MCA - Data Science and Data Analytics",
+                        "link" : "/course/mca-data-science-analytics-in-Amritsar"
+                    },
+                    {
+                        "text" : "PG - Machine Learning, Python & AI",
+                        "link" : "/course/pg-machine-learning-python-ai-in-Amritsar"
+                    },
+                    {
+                        "text" : "BCA, MCA - Machine Learning & AI",
+                        "link" : "/course/mca-machine-learning-ai-in-Amritsar"
+                    },
+                    {
+                        "text" : "BCA, MCA - Data Analytics",
+                        "link" : "/course/bca-in-data-analytics-in-Amritsar"
+                    }
+                
+                ]
+                },
+                {
+                    "text" : "Skill Degree",
+                 
+                    "submenu" : [
+                        {
+                            "text" : "Degree in Multimedia & Animation",
+                            "link" : "/course/degree-in-multimedia-animation-in-Amritsar"
+                        },
+                        {
+                            "text" : "Journalism & Mass Communication",
+                            "link" : "/course/mba-in-journalism-mass-communication-in-Amritsar"
+                        },
+                        {
+                            "text" : "Degree in Interior Designing",
+                            "link" : "/course/degree-in-interior-designing-in-Amritsar"
+                        },
+                        {
+                            "text" : "Degree in Computer Sciences ",
+                            "link" : "/course/degree-in-computer-science-in-Amritsar"
+                        },
+                        {
+                            "text" : "Degree in Web Technologies",
+                            "link" : "/course/degree-in-web-technologies-in-Amritsar"
+                        },
+                        {
+                            "text" : "Degree in Beauty & Wellness",
+                            "link" : "/course/degree-in-beauty-wellness-in-Amritsar"
+                        }
+                    ]
+                }
+               
+            ]
+        },
+        {
+            "text" : "Student Area",
+            "link" : "",
+            "submenu" : [
+                {
+                    "text": "Testimonials",
+                    "link" : "/meta-morph-academy-reviews-Amritsar-sector-34"
+                },
+                {
+                    "text": "Creative Gallery",
+                    "link" : "/student-graphic-portfolios-and-work"
+                },
+                {
+                    "text": "Student Gallery",
+                    "link" : "student-photogrphs"
+                },
+                {
+                    "text": "Photography Gallery",
+                    "link" : "photography-school-student-portfolio-and-showcase"
+                },
+                {
+                    "text": " Animation Gallery",
+                    "link" : "/animation-student-portfolio"
+                },
+                {
+                    "text": " Video Gallery",
+                    "link" : "/video-gallery"
+                },
+                {
+                    "text": "Life & Morph",
+                    "link" : "/animation-school-and-career-guide-for-students-at-morph-academy"
+                }
+            ]
+        }
+    ]
+}

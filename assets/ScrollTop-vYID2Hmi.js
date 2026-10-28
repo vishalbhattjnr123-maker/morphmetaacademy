@@ -1,0 +1,1 @@
+import{u as s,r as e,j as o}from"./index-DYBR0Ha3.js";const c=t=>{const r=s();return e.useEffect(()=>{window.scrollTo({top:0,left:0,behavior:"smooth"})},[r]),o.jsx(o.Fragment,{children:t.children})};export{c as default};
